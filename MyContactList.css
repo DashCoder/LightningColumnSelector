@@ -1,0 +1,60 @@
+.THIS {        
+background:url("https://bit.ly/1Dy6Eji") no-repeat center center;
+min-height:100%;
+background-size:cover;
+color: darkblue;
+font: Arial;
+margin: 0;
+padding-top:10px;
+padding-bottom:10px;
+}
+
+.THIS #container {
+  right: 0;
+  width: 100%;
+  height: 50px;
+  position: relative;
+}
+
+.THIS .inputSelect {width:150px;height:100px;}
+.THIS #changeColsSection {min-width:150px;}
+.THIS #colOption {
+  height: 100%;
+  position: absolute;
+  top: 20;
+  right: 0;
+}
+.THIS #colOption {
+  z-index: 10;
+}
+
+.THIS th {
+    padding:10px;
+}
+
+.THIS .toggle {
+    display: none;
+}
+
+.THIS ul {
+list-style-type: none;
+width: 90%;
+padding: 5px;
+position: relative;
+margin: 0 auto;
+}
+.THIS h3 {
+font: bold 20px/1.5 Arial;
+}
+.THIS .minli {
+padding: 10px;
+margin-bottom: 10px;
+overflow: auto;
+background: rgba(255,255,255,.4);
+border-radius: 3px;
+-webkit-border-radius: 3px;
+width:95%;
+}
+.THIS li:hover {
+cursor: pointer;
+}
