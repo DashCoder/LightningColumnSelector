@@ -1,0 +1,47 @@
+<aura:component controller="MyContactListController">
+  	<aura:attribute name="mydata" type="Object"/>
+    <aura:attribute name="mycolumns" type="List"/>
+    <aura:handler name="init" value="{!this}" action="{!c.myColumnAction}"/>
+    <aura:attribute name="contacts" type="Contact[]" /> 
+
+    <div class="slds-card__body" >
+                    <section class="slds-card__body" id="container">
+  
+                        <div id="colOption">
+                            <lightning:button label="*" onclick="{!c.toggleColOption}"/>
+                            <div aura:id="changeColsSection" class="toggle" style="background:white;opacity:0.7;">
+                                    <ui:inputSelect multiple="true" class="multiple inputSelect" aura:id="InputSelectMultiple" change="{!c.onMultiSelectChange}">
+                                        <ui:inputSelectOption text="Title" />
+                                        <ui:inputSelectOption text="Name" value="true" />
+                                        <ui:inputSelectOption text="Phone" value="true"/>
+                                        <ui:inputSelectOption text="Email"/>
+                                        <ui:inputSelectOption text="Id"/>
+                                    </ui:inputSelect>
+                                <br/>
+                             <lightning:button label = "Done" onclick="{!c.myColumnAction}" />
+                           </div>  
+                        </div>
+                         
+                       
+                        <div class="slds-scrollable--x" >
+                                        
+                            <table class="slds-table slds-table--bordered slds-max-medium-table--stacked" >
+                                <thead>
+                                    <tr class="slds-text-heading--label">
+                                        <aura:iteration items="{!v.mycolumns}" var="field" >
+                                        	<th class="slds-is-sortable" scope="col">
+                                              <div class="slds-truncate" >{!field.fieldName}</div>
+                                            </th>
+                                        </aura:iteration>
+                                        <!--th class="slds-cell-shrink">
+                                        </th-->
+                                    </tr>
+                                </thead>
+                                <tbody id="data">
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+  </div>
+    
+</aura:component>
