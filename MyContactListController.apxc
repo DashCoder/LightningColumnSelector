@@ -1,0 +1,16 @@
+public with sharing class MyContactListController {
+
+       @AuraEnabled
+    public static List<Contact> getContacts() {
+        // String linkToAccount = System.currentPageReference().getParameters().get('objectID');
+         
+        List<Contact> contacts = [SELECT Id, Title, Name, Phone, Email FROM Contact LIMIT 100];
+        return contacts;
+    
+        /* Improvement: pass fields to fetch as parameter */  
+        // String queryString = 'Select '+ String.escapeSingleQuotes(fields)+
+        // ' from contact LIMIT 100'
+    
+    }
+
+}
