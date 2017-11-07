@@ -25,7 +25,10 @@
         $A.util.toggleClass(toggleText, "toggle");
         
          var action = component.get("c.getContacts");
-			action.setCallback(this, function(data) {
+	 action.setParams({
+            "accountId": component.get("v.recordId")
+         });	
+         action.setCallback(this, function(data) {
 				component.set("v.contacts", data.getReturnValue());
 				
                 var selectCmp = component.find("InputSelectMultiple");
