@@ -1,10 +1,9 @@
 public with sharing class MyContactListController {
 
        @AuraEnabled
-    public static List<Contact> getContacts() {
-        // String linkToAccount = System.currentPageReference().getParameters().get('objectID');
+    public static List<Contact> getContacts(Id accountId) {
          
-        List<Contact> contacts = [SELECT Id, Title, Name, Phone, Email FROM Contact LIMIT 100];
+        List<Contact> contacts = [SELECT Id, Title, Name, Phone, Email FROM Contact where account.id = :accountId];
         return contacts;
     
         /* Improvement: pass fields to fetch as parameter */  
